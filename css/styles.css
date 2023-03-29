@@ -9,6 +9,7 @@
     --color-modal: #FCFCFC;
     --color-laguna: #31D0AA;
     --color-icon: #8E8F99;
+    --color-border: #2e2f4266;
 }
 
 body {
@@ -636,7 +637,7 @@ img {
     line-height: 24px;
     letter-spacing: 2;
     color: var(--color-fading);
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent
 }
 
 .footer-form-container {
@@ -657,7 +658,6 @@ img {
     line-height: 24px;
     letter-spacing: 1.5;
     border-radius: 4px;
- 
 }
 
 .footer-form-icon {
@@ -697,11 +697,21 @@ img {
     scale(1.2)
 }
 
+.modal-button {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    position: relative;
+    margin-bottom: 24px;
+}
+
 .modal-close {
     width: 24px;
     height: 24px;
     position: absolute;
-    transform: translate(324px, -12px);
+    transform: translate(-50%, -50%);
 }
 
 .is-hidden {
@@ -709,3 +719,41 @@ img {
     visibility: hidden;
     pointer-events: none
 }
+
+.modal-title {
+    color: var(--color-primary);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 1.5;
+    margin-bottom: 16px;
+}
+
+.form-label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 1.17;
+    color: var(--color-icon);
+    margin-bottom: 4px;
+}
+
+.modal-input {
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 8px 38px;
+    display: block;
+    position: relative;
+}
+
+.modal-icon {
+    position: absolute;
+    width: 18px;
+    height: 24px;
+    transform: translate(16px, -32px);
+}
+
