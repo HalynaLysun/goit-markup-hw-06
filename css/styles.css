@@ -779,10 +779,6 @@ img {
     fill: var(--color-active);
 }
 
-.modal-input:focus {
-    border-color: var(--color-active);
-}
-
 .form-label:hover .modal-input,
 .form-label:focus .modal-input {
     border-color: var(--color-active);
@@ -818,7 +814,6 @@ img {
 
 .form-check:checked + .check-label span {
     background-color: var(--color-filtr);
-    fill: var(--color-fading);
 }
 
 .form-check:checked + .check-label .check-text .check-icon {
@@ -859,6 +854,7 @@ img {
     position: absolute;
     width: 16px;
     height: 16px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .check-icon {
@@ -867,6 +863,7 @@ img {
     position: relative;
     transform: translate(30%, 10%);
     fill: transparent;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .form-button {
