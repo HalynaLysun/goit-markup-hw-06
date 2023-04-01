@@ -619,8 +619,8 @@ img {
     color: var(--color-fading);
     font-weight: 500;
     font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 1.15;
+    line-height: 1.15;
+    letter-spacing: 0.02em;
     margin-bottom: 16px;
 }
 
@@ -634,8 +634,8 @@ img {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 12px;
-    line-height: 24px;
-    letter-spacing: 2;
+    line-height: 2;
+    letter-spacing: 0.04em;
     color: var(--color-fading);
     background-color: transparent
 }
@@ -654,8 +654,8 @@ img {
     min-width: 165px;
     font-weight: 500;
     font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 1.5;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
     border: none;
     border-radius: 4px;
 }
@@ -678,6 +678,7 @@ img {
 
 .modal {
     max-width: 408px;
+    width: 100%;
     min-height: 576px;
     padding: 24px;
     background-color: var(--color-modal);
@@ -689,7 +690,8 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    position: relative;
+    position: absolute;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .backdrop.is-hidden .modal {
@@ -703,6 +705,7 @@ img {
     height: 24px;
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
     display: block;
     margin-left: auto;
     position: relative;
@@ -728,7 +731,6 @@ img {
     fill: var(--color-fading);
 }
 
-
 .is-hidden {
     opacity: 0;
     visibility: hidden;
@@ -739,19 +741,28 @@ img {
     color: var(--color-primary);
     font-weight: 500;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 1.5;
     text-align: center;
-    letter-spacing: 1.5;
+    letter-spacing: 0.02em;
     margin-bottom: 16px;
 }
 
 .form-label {
     font-weight: 400;
     font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 1.17;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
     color: var(--color-icon);
+}
+
+.modal-text {
+    display: block;
     margin-bottom: 4px;
+}
+
+.modal-block {
+    display: block;
+    margin-bottom: 8px;
 }
 
 .modal-input {
@@ -786,17 +797,17 @@ img {
 
 .form-textarea {
     width: 100%;
-    margin-top: 4px;
     background-color: transparent;
     border: 1px solid var(--color-border);
     border-radius: 4px;
     padding: 8px 16px;
     font-weight: 400;
     font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 1.17;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
     color: var(--color-border);
     margin-bottom: 16px;
+    resize: none;
 }
 
 .visually-hidden {
@@ -823,45 +834,37 @@ img {
 .check-label {
     font-weight: 400;
     font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 1.17;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
     color: var(--color-icon);
-    display: flex;
     margin-bottom: 24px;
-}
-
-.check-label::before {
-    content: '';
-    width: 16px;
-    height: 16px;
-    border: 1px solid var(--color-border);
-    border-radius: 2px;
-    margin-right: 8px;
-    bottom: 0;
-    right: 0;
 }
 
 .check-link {
     font-weight: 400;
     font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 1.17;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
     color: var(--color-active);
     margin-left: 3px;
 }
 
 .check-text {
-    position: absolute;
+    display: inline-block;
     width: 16px;
     height: 16px;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    vertical-align: middle;
+    margin-right: 8px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 2px;
 }
 
 .check-icon {
     width: 10px;
     height: 8px;
     position: relative;
-    transform: translate(30%, 10%);
+    transform: translate(20%, 10%);
     fill: transparent;
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
@@ -872,13 +875,15 @@ img {
     color: var(--color-fading);
     font-weight: 500;
     font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 1.5;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
     border: none;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
+    cursor: pointer;
     min-height: 56px;
     min-width: 169px;
     display: block;
     margin: 0 auto;
+    margin-top: 24px;
 }
